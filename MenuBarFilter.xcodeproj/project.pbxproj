@@ -1,0 +1,254 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA1560271316DB29001F271A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1560261316DB29001F271A /* Cocoa.framework */; };
+		DA1560341316DB29001F271A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1560331316DB29001F271A /* main.m */; };
+		DA15603A1316DB29001F271A /* MenuBarFilterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1560391316DB29001F271A /* MenuBarFilterAppDelegate.m */; };
+		DA15603D1316DB29001F271A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA15603B1316DB29001F271A /* MainMenu.xib */; };
+		DA1560451316DB82001F271A /* MenuBarFilterWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1560441316DB82001F271A /* MenuBarFilterWindow.m */; };
+		DAF6AEF2136D713B00AAA185 /* MenuBarFilter.icns in Resources */ = {isa = PBXBuildFile; fileRef = DAF6AEF1136D713B00AAA185 /* MenuBarFilter.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DA1560221316DB29001F271A /* MenuBarFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuBarFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA1560261316DB29001F271A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DA15602E1316DB29001F271A /* MenuBarFilter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MenuBarFilter-Info.plist"; sourceTree = "<group>"; };
+		DA1560321316DB29001F271A /* MenuBarFilter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MenuBarFilter-Prefix.pch"; sourceTree = "<group>"; };
+		DA1560331316DB29001F271A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA1560381316DB29001F271A /* MenuBarFilterAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuBarFilterAppDelegate.h; sourceTree = "<group>"; };
+		DA1560391316DB29001F271A /* MenuBarFilterAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuBarFilterAppDelegate.m; sourceTree = "<group>"; };
+		DA15603C1316DB29001F271A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DA1560431316DB82001F271A /* MenuBarFilterWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBarFilterWindow.h; sourceTree = "<group>"; };
+		DA1560441316DB82001F271A /* MenuBarFilterWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBarFilterWindow.m; sourceTree = "<group>"; };
+		DAF6AEF1136D713B00AAA185 /* MenuBarFilter.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MenuBarFilter.icns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA15601F1316DB29001F271A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1560271316DB29001F271A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA1560171316DB29001F271A = {
+			isa = PBXGroup;
+			children = (
+				DAF6AEF1136D713B00AAA185 /* MenuBarFilter.icns */,
+				DA15602C1316DB29001F271A /* MenuBarFilter */,
+				DA1560251316DB29001F271A /* Frameworks */,
+				DA1560231316DB29001F271A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA1560231316DB29001F271A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA1560221316DB29001F271A /* MenuBarFilter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA1560251316DB29001F271A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA1560261316DB29001F271A /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA15602C1316DB29001F271A /* MenuBarFilter */ = {
+			isa = PBXGroup;
+			children = (
+				DA1560381316DB29001F271A /* MenuBarFilterAppDelegate.h */,
+				DA1560391316DB29001F271A /* MenuBarFilterAppDelegate.m */,
+				DA15603B1316DB29001F271A /* MainMenu.xib */,
+				DA15602E1316DB29001F271A /* MenuBarFilter-Info.plist */,
+				DA1560321316DB29001F271A /* MenuBarFilter-Prefix.pch */,
+				DA1560331316DB29001F271A /* main.m */,
+				DA1560431316DB82001F271A /* MenuBarFilterWindow.h */,
+				DA1560441316DB82001F271A /* MenuBarFilterWindow.m */,
+			);
+			path = MenuBarFilter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA1560211316DB29001F271A /* MenuBarFilter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA1560401316DB29001F271A /* Build configuration list for PBXNativeTarget "MenuBarFilter" */;
+			buildPhases = (
+				DA15601E1316DB29001F271A /* Sources */,
+				DA15601F1316DB29001F271A /* Frameworks */,
+				DA1560201316DB29001F271A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MenuBarFilter;
+			productName = MenuBarFilter;
+			productReference = DA1560221316DB29001F271A /* MenuBarFilter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA1560191316DB29001F271A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Box UK";
+			};
+			buildConfigurationList = DA15601C1316DB29001F271A /* Build configuration list for PBXProject "MenuBarFilter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DA1560171316DB29001F271A;
+			productRefGroup = DA1560231316DB29001F271A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA1560211316DB29001F271A /* MenuBarFilter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA1560201316DB29001F271A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA15603D1316DB29001F271A /* MainMenu.xib in Resources */,
+				DAF6AEF2136D713B00AAA185 /* MenuBarFilter.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA15601E1316DB29001F271A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1560341316DB29001F271A /* main.m in Sources */,
+				DA15603A1316DB29001F271A /* MenuBarFilterAppDelegate.m in Sources */,
+				DA1560451316DB82001F271A /* MenuBarFilterWindow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DA15603B1316DB29001F271A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA15603C1316DB29001F271A /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA15603E1316DB29001F271A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DA15603F1316DB29001F271A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DA1560411316DB29001F271A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MenuBarFilter/MenuBarFilter-Prefix.pch";
+				INFOPLIST_FILE = "MenuBarFilter/MenuBarFilter-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DA1560421316DB29001F271A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MenuBarFilter/MenuBarFilter-Prefix.pch";
+				INFOPLIST_FILE = "MenuBarFilter/MenuBarFilter-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA15601C1316DB29001F271A /* Build configuration list for PBXProject "MenuBarFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA15603E1316DB29001F271A /* Debug */,
+				DA15603F1316DB29001F271A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA1560401316DB29001F271A /* Build configuration list for PBXNativeTarget "MenuBarFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA1560411316DB29001F271A /* Debug */,
+				DA1560421316DB29001F271A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA1560191316DB29001F271A /* Project object */;
+}
