@@ -40,6 +40,20 @@ CGSConnection cid;
         [self setLevel:CGWindowLevelForKey(kCGCursorWindowLevelKey)];
         [self setOpaque: NO];
         [self setBackgroundColor:[NSColor colorWithDeviceWhite:0.0 alpha:0.0]];
+        
+        [self setLevel:kCGStatusWindowLevel + 1];
+        
+//        if ( [self respondsToSelector:@selector(toggleFullScreen:)] ) {
+//            [self setCollectionBehavior:
+//             NSWindowCollectionBehaviorCanJoinAllSpaces |
+//             NSWindowCollectionBehaviorTransient];
+//        }
+//        else {
+            [self setCollectionBehavior:
+             NSWindowCollectionBehaviorCanJoinAllSpaces |
+             NSWindowCollectionBehaviorStationary];
+//        }
+        
         wid = [self windowNumber];
     }
     return self;

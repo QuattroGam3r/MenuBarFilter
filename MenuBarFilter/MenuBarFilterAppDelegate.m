@@ -14,18 +14,14 @@
     
     // create invert overlay
     invertWindow = [[MenuBarFilterWindow alloc] init];
-    [invertWindow setLevel:kCGStatusWindowLevel+1];
     [invertWindow setFilter:@"CIColorInvert"];
-    [invertWindow setCollectionBehavior:1 | 16];
     
     // create hue overlay
     hueWindow = [[MenuBarFilterWindow alloc] init];
-    [hueWindow setLevel:kCGStatusWindowLevel+1];
     [hueWindow setFilter:@"CIHueAdjust"];
     [hueWindow setFilterValues:
      [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:M_PI], 
       @"inputAngle", nil]];  
-    [hueWindow setCollectionBehavior:1 | 16];
     
     // add observer for screen changes
     [[NSNotificationCenter defaultCenter] addObserver:self 
@@ -39,10 +35,30 @@
                                            options:( NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew )
                                            context:NULL];
     
+    if ( [invertWindow respondsToSelector:@selector(toggleFullScreen:)] ) {                                                    
+        // lion hack
+        NSTimer * timer = [NSTimer timerWithTimeInterval:1
+                                                  target:self 
+                                                selector:@selector(checkForFullscreen) 
+                                                userInfo:nil 
+                                                 repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:timer 
+                                  forMode:NSDefaultRunLoopMode];
+        
+        NSTimer * timer2 = [NSTimer timerWithTimeInterval:.1
+                                                  target:self 
+                                                selector:@selector(checkForAppSwitch) 
+                                                userInfo:nil 
+                                                 repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:timer2
+                                  forMode:NSDefaultRunLoopMode];
+    }
+    
     // show overlays
     [self reposition];
     [invertWindow orderFront:nil];
     [hueWindow orderFront:nil]; 
+    visible = YES;
 }
 
 - (void) reposition {
@@ -66,10 +82,12 @@
             // hide
             [hueWindow orderOut:nil];
             [invertWindow orderOut:nil];
+            visible = NO;
         } else {
             // show
             [hueWindow orderFront:nil];
             [invertWindow orderFront:nil];
+            visible = YES;
         }
         return;
     }
@@ -78,6 +96,41 @@
                          ofObject:object
                            change:change
                           context:context];
+}
+
+- (void) checkForFullscreen {
+    CGRect r = CGRectMake( 0, 0, 1, 1 );
+    
+    CGImageRef capturedImage = CGWindowListCreateImage(
+                                   r, kCGWindowListOptionOnScreenBelowWindow, 
+                                                       [invertWindow windowNumber], kCGWindowImageDefault );
+    
+    NSBitmapImageRep * bitmapRep = [[NSBitmapImageRep alloc] initWithCGImage:capturedImage];
+    
+    NSColor * color = [bitmapRep colorAtX:0 y:0];
+    if ( [color brightnessComponent] > .9 && !visible ) {
+        [hueWindow orderFront:nil];
+        [invertWindow orderFront:nil];
+        visible = YES;
+    }
+    else if ( [color brightnessComponent] < .9 && visible ) {
+        [hueWindow orderOut:nil];
+        [invertWindow orderOut:nil];
+        visible = NO;
+    }
+    
+    [bitmapRep release];
+    CGImageRelease( capturedImage );
+}
+
+- (void) checkForAppSwitch {
+    static int previousPid = -1;
+    int activePid = [[[[NSWorkspace sharedWorkspace] activeApplication]
+                      valueForKey:@"NSApplicationProcessIdentifier"] intValue];
+    if ( previousPid != activePid ) {
+        [self checkForFullscreen];
+        previousPid = activePid;
+    }
 }
 
 @end

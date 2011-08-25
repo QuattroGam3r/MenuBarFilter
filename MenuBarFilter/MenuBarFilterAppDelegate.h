@@ -13,6 +13,7 @@
 @private
     MenuBarFilterWindow * invertWindow;
     MenuBarFilterWindow * hueWindow;
+    BOOL visible;
 
 }
 
