@@ -16,12 +16,7 @@
     invertWindow = [[MenuBarFilterWindow alloc] init];
     [invertWindow setFilter:@"CIColorInvert"];
     
-    // create hue overlay
-    hueWindow = [[MenuBarFilterWindow alloc] init];
-    [hueWindow setFilter:@"CIHueAdjust"];
-    [hueWindow setFilterValues:
-     [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:M_PI], 
-      @"inputAngle", nil]];  
+      
     
     // add observer for screen changes
     [[NSNotificationCenter defaultCenter] addObserver:self 
